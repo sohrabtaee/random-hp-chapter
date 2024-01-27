@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Harry Potter book chapter generator</title>
+  </head>
+
+  <body>
+    <h1>Random Harry Potter book chapter generator</h1>
+    <p id="text" style="font-size: 1.5rem"></p>
+    <script>
+      ;(function () {
+        const books = [
+          {
+            title: "Harry Potter and the Sorcerer's Stone",
+            chapters: 17,
+          },
+          {
+            title: 'Harry Potter and the Chamber of Secrets',
+            chapters: 18,
+          },
+          {
+            title: 'Harry Potter and the Prisoner of Azkaban',
+            chapters: 22,
+          },
+          {
+            title: 'Harry Potter and the Goblet of Fire',
+            chapters: 37,
+          },
+          {
+            title: 'Harry Potter and the Order of the Phoenix',
+            chapters: 38,
+          },
+          {
+            title: 'Harry Potter and the Half-Blood Prince',
+            chapters: 30,
+          },
+          {
+            title: 'Harry Potter and the Deathly Hallows',
+            chapters: 37,
+          },
+        ]
+
+        const randomBook = books[Math.floor(Math.random() * books.length)]
+        const randomChapter =
+          Math.floor(Math.random() * randomBook.chapters) + 1
+
+        const text = `${randomBook.title} - Chapter ${randomChapter}`
+        const paragraph = document.getElementById('text')
+        paragraph.innerText = text
+      })()
+    </script>
+  </body>
+</html>
